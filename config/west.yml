@@ -1,30 +1,11 @@
 manifest:
   remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
-    - name: cfergeau
-      url-base: https://github.com/cfergeau
-    - name: NuclearSquid
-      url-base: https://github.com/Nuclear-Squid
-    - name: raeedcho
-      url-base: https://github.com/raeedcho
+    - name: rloutier
+      url-base: https://github.com/rloutier
   projects:
     - name: zmk
-      remote: zmkfirmware
-      # Pin ZMK to the tip of the `main` branch on 2026-03-30.
-      # https://github.com/Nuclear-Squid/zmk-keyboard-quacken/pull/49#issuecomment-4153385353
-      revision: c62da0e16646d10240ba29191bdbcb5611b3a1af
+      remote: rloutier
+      revision: aekeynox
       import: app/west.yml
-    - name: zmk-keyboard-quacken
-      remote: NuclearSquid
-      revision: zmk-main
-    - name: zmk-config-totem
-      remote: cfergeau
-      revision: zmk-module
-    - name: temper-zmk-config
-      remote: raeedcho
-      revision: main
-
-
   self:
     path: config
