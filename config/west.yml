@@ -2,12 +2,8 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: cfergeau
-      url-base: https://github.com/cfergeau
     - name: NuclearSquid
       url-base: https://github.com/Nuclear-Squid
-    - name: raeedcho
-      url-base: https://github.com/raeedcho
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -18,13 +14,5 @@ manifest:
     - name: zmk-keyboard-quacken
       remote: NuclearSquid
       revision: zmk-main
-    - name: zmk-config-totem
-      remote: cfergeau
-      revision: zmk-module
-    - name: temper-zmk-config
-      remote: raeedcho
-      revision: main
-
-
   self:
     path: config
