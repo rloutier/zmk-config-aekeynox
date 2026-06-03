@@ -2,6 +2,10 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: NuclearSquid
+      url-base: https://github.com/Nuclear-Squid
+    - name: rloutier
+      url-base: https://github.com/rloutier
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -9,5 +13,11 @@ manifest:
       # https://github.com/Nuclear-Squid/zmk-keyboard-quacken/pull/49#issuecomment-4153385353
       revision: c62da0e16646d10240ba29191bdbcb5611b3a1af
       import: app/west.yml
+    - name: zmk-keyboard-quacken
+      remote: NuclearSquid
+      revision: zmk-main
+    - name: zmk-config-go60
+      remote: rloutier
+      revision: main
   self:
     path: config
