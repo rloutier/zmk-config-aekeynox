@@ -1,16 +1,21 @@
-#define DK_LAYER EXTRA_LAYERS_START_INDEX
+// #define DK_LAYER EXTRA_LAYERS_START_INDEX
 
-// Standard base layer, but SQT becomes a dead key
+// Standard base layer, adjusted for basic AZERTY usage on 4x6 keyboards
+//   - special characters on number row (é è ç à) [!!! not shown here]
+//   - 2 special keys under right pinky (trema/circonflexe and ù)
+
 &base_layer {
   display-name = "Base";
   bindings = <SELENIUM_KEYMAP_BINDINGS(
-    &kp TAB     ,  &kp Q &kp W &kp E &kp R &kp T  ,  &kp Y  &kp U  &kp I     &kp O   &kp P     ,  &kp BACKSPACE  ,
-    &kp ESCAPE  ,  HRM_A HRM_S HRM_D HRM_F &kp G  ,  &kp H  HRM_J  HRM_K     HRM_L   HRM_SEMI  ,  &dead_key      ,
-    &kp LSHIFT  ,  &kp Z &kp X &kp C &kp V &kp B  ,  &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH  ,  &kp RSHIFT     ,
+    &kp TAB     ,  &kp Q &kp W &kp E &kp R &kp T  ,  &kp Y  &kp U  &kp I     &kp O   &kp P     ,  &kp LBKT   ,
+    &kp ESCAPE  ,  HRM_A HRM_S HRM_D HRM_F &kp G  ,  &kp H  HRM_J  HRM_K     HRM_L   HRM_SEMI  ,  &kp SQT    ,
+    &kp LSHIFT  ,  &kp Z &kp X &kp C &kp V &kp B  ,  &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH  ,  &kp RSHIFT ,
         LTHUMB_TUCK , LTHUMB_HOME , LTHUMB_REACH  ,  RTHUMB_REACH , RTHUMB_HOME , RTHUMB_TUCK
   )>;
 };
 
+// No extra layer, no extra behavior needed with this elementary approch
+/*
 / {
   behaviors {
     TWO_LEVEL_KEY(dead_key, &EZ_SL(DK_LAYER), S_PRCNT) // ' % (1dk)
@@ -31,3 +36,4 @@
     };
   };
 };
+*/
