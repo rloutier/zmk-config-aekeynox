@@ -36,20 +36,14 @@
   #define ALT_CTL LALT
 #endif
 
-#define H_S &hrm GUI_OPT
-#define H_D &hrm CTL_CMD
-#define H_F &hrm ALT_CTL
-#define H_J &hrm ALT_CTL
-#define H_K &hrm CTL_CMD
-#define H_L &hrm GUI_OPT
-
-#ifdef HRM_SHIFT
-  #define H_A    &hrm LSHIFT
-  #define H_SEMI &hrm RSHIFT
-#else
-  #define H_A    &kp
-  #define H_SEMI &kp
-#endif
+#define H_A    &hrm GUI_OPT
+#define H_S    &hrm ALT_CTL
+#define H_D    &hrm LSHIFT
+#define H_F    &hrm CTL_CMD
+#define H_J    &hrm CTL_CMD
+#define H_K    &hrm RSHIFT
+#define H_L    &hrm ALT_CTL
+#define H_SEMI &hrm GUI_OPT
 
 #if defined HT_HOME_ROW_MODS || defined HT_TWO_THUMB_KEYS
   #define HRM_A    H_A A
