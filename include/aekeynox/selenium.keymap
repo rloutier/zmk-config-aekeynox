@@ -2,6 +2,7 @@
 // https://github.com/OneDeadKey/selenium
 
 #include <dt-bindings/zmk/bt.h> // bluetooth behaviors (see fn/media layer)
+#include <dt-bindings/zmk/pointing.h> // mouse scroll emulation (see VimNav layer)
 
 #ifndef CI_IGNORE_USER_SETTINGS
   #include "settings.h"   // user settings
@@ -73,10 +74,10 @@
     vim_nav_layer: vim_nav_layer {
       display-name = "VimNav";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
-        &trans  ,  X_ALL       X_UNDO      X_SHTAB   &kp TAB     &kp LA(F4)         ,   &kp PG_UP &kp HOME &kp END &kp PG_DN &kp DEL ,  &trans ,
-        &trans  ,  &kp GUI_OPT &kp ALT_CTL &kp LSFT  &kp CTL_CMD &kp C_AC_BACK      ,   &kp LEFT  &kp DOWN &kp UP  &kp RIGHT &none   ,  &trans ,
-        &trans  ,  X_CTL_W     X_CUT       X_COPY    X_PASTE     &kp C_AC_FORWARD   ,   &none     &none    &none   &none     &none   ,  &trans ,
-                                &kp CAPS , &sc FN_MEDIA_LAYER DEL , &mo NUM_LAYER   ,   &trans ,  &mo FN_MEDIA_LAYER , &EZ_LSK(RALT)
+        &trans  ,  X_ALL       X_UNDO      X_SHTAB   &kp TAB     &kp LA(F4)      ,   &kp PG_UP      &kp HOME       &kp END      &kp PG_DN       &kp DEL ,  &trans ,
+        &trans  ,  &kp GUI_OPT &kp ALT_CTL &kp LSFT  &kp CTL_CMD &kp K_BACK      ,   &kp LEFT       &kp DOWN       &kp UP       &kp RIGHT       &none   ,  &trans ,
+        &trans  ,  X_CTL_W     X_CUT       X_COPY    X_PASTE     &kp K_FORWARD   ,   &msc MOVE_LEFT &msc MOVE_DOWN &msc MOVE_UP &msc MOVE_RIGHT &none   ,  &trans ,
+                             &kp CAPS , &sc FN_MEDIA_LAYER DEL , &mo NUM_LAYER   ,   &trans ,  &mo FN_MEDIA_LAYER , &EZ_LSK(RALT)
       )>;
     };
 
