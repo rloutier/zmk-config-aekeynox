@@ -121,3 +121,10 @@
 // Beware: this increases the typing load of the left thumb.
 
 // #define LEFT_HAND_SPACE
+
+// When using a keyboard through multiple Virtual Machines (via RDP), it
+// turns out that basic LS(), RA(), etc... key presses do not work.
+// Uncomment the following to replace these key presses by macros
+// (Modifier press / Key tap / Modifier release)
+// Done with AZERTY & Windows in mind; not fully parametrised otherwise
+#define VM_VDM

@@ -71,6 +71,35 @@
         ;
     };
 
+    // Sur la VM VDM, les define standards LS(), RA(), etc...
+    // ne fonctionne quasiment pas. Surement soucis de timing
+    // On tente donc via macro
+    OMIT_IF_NO_REF vdm_mod: vdm_mod {
+      compatible = "zmk,behavior-macro-two-param";
+      #binding-cells = <2>;
+      tap-ms = <0>;
+      wait-ms = <0>;
+      bindings
+        = <&macro_press    &macro_param_1to1 &kp MACRO_PLACEHOLDER>  // Modifier 
+        , <&macro_tap      &macro_param_2to1 &kp MACRO_PLACEHOLDER>  // Regular key
+        , <&macro_release  &macro_param_1to1 &kp MACRO_PLACEHOLDER>  // Modifier
+        ;
+    };
+    
+    // Cf &vdm_mod. Ici, on ajoute un espace pour les dead-keys AZERTY
+    OMIT_IF_NO_REF vdm_mod_dk: vdm_mod_dk {
+      compatible = "zmk,behavior-macro-two-param";
+      #binding-cells = <2>;
+      tap-ms = <0>;
+      wait-ms = <0>;
+      bindings
+        = <&macro_press    &macro_param_1to1 &kp MACRO_PLACEHOLDER>  // Modifier 
+        , <&macro_tap      &macro_param_2to1 &kp MACRO_PLACEHOLDER>  // Regular key
+        , <&macro_release  &macro_param_1to1 &kp MACRO_PLACEHOLDER>  // Modifier
+        , <&macro_tap      &kp SPACE>
+        ;
+    };
+
   };
 };
 

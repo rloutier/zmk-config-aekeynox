@@ -3,16 +3,27 @@
 /**
  * Action Combos
  */
+#ifdef VM_VDM
+  #define X_UNDO  &vdm_mod LCTL W
+  #define X_CUT   &vdm_mod LCTL X
+  #define X_COPY  &vdm_mod LCTL C
+  #define X_PASTE &vdm_mod LCTL V
+  #define X_REDO  &vdm_mod LCTL Y
 
-#define X_UNDO  &kp CMD(W)
-#define X_CUT   &kp CMD(X)
-#define X_COPY  &kp CMD(C)
-#define X_PASTE &kp CMD(V)
-#define X_REDO  &kp CMD(Y)
+  #define X_CTL_W &vdm_mod LCTL Z
+  #define X_SAVE  &vdm_mod LCTL S
+  #define X_ALL   &vdm_mod LCTL Q
+#else
+  #define X_UNDO  &kp CMD(W)
+  #define X_CUT   &kp CMD(X)
+  #define X_COPY  &kp CMD(C)
+  #define X_PASTE &kp CMD(V)
+  #define X_REDO  &kp CMD(Y)
 
-#define X_CTL_W &kp LC(Z)
-#define X_SAVE  &kp CMD(S)
-#define X_ALL   &kp CMD(Q)
+  #define X_CTL_W &kp LC(Z)
+  #define X_SAVE  &kp CMD(S)
+  #define X_ALL   &kp CMD(Q)
+#endif
 
 /**
  * Arsenik Symbols:
@@ -21,46 +32,92 @@
  *   ~[]_# |!;:?
  */
 
-// first row
-#define S_CARET &kp RA(N9)
-#define S_LT    &kp NUBS
-#define S_GT    &kp PIPE2
-#define S_DLLR  &kp RBKT
-#define S_PRCNT &kp LS(SQT)
-#define S_AT    &kp RA(N0)
-#define S_AMPS  &kp N1
-#define S_STAR  &kp BSLH
-#define S_SQT   &kp N4
-#define S_GRAVE &digraph RA(N7) SPACE
+#ifdef VM_VDM
+  // first row
+  #define S_CARET &vdm_mod RALT N9
+  #define S_LT    &kp NUBS
+  #define S_GT    &kp PIPE2
+  #define S_DLLR  &kp RBKT
+  #define S_PRCNT &vdm_mod LSHIFT SQT
+  #define S_AT    &vdm_mod RALT N0
+  #define S_AMPS  &kp N1
+  #define S_STAR  &kp BSLH
+  #define S_SQT   &kp N4
+  #define S_GRAVE &vdm_mod_dk RALT N7
 
-// second row
-#define S_LBRC  &kp RA(N4)
-#define S_LPAR  &kp N5
-#define S_RPAR  &kp MINUS
-#define S_RBRC  &kp RA(EQUAL)
-#define S_EQUAL &kp EQUAL
-#define S_BSLH  &kp RA(N8)
-#define S_PLUS  &kp PLUS
-#define S_MINUS &kp N6
-#define S_FSLH  &kp LS(DOT)
-#define S_DQT   &kp N3
+  // !!! TODO: les lignes suivantes !!!
+  // second row
+  #define S_LBRC  &kp RA(N4)
+  #define S_LPAR  &kp N5
+  #define S_RPAR  &kp MINUS
+  #define S_RBRC  &kp RA(EQUAL)
+  #define S_EQUAL &kp EQUAL
+  #define S_BSLH  &kp RA(N8)
+  #define S_PLUS  &kp PLUS
+  #define S_MINUS &kp N6
+  #define S_FSLH  &kp LS(DOT)
+  #define S_DQT   &kp N3
 
-// third row
-#define S_TILDE &digraph RA(N2) SPACE
-#define S_LBKT  &kp RA(N5)
-#define S_RBKT  &kp RA(MINUS)
-#define S_UNDER &kp N8
-#define S_HASH  &kp RA(N3)
-#define S_PIPE  &kp RA(N6)
-#define S_EXCL  &kp FSLH
-#define S_SEMI  &kp COMMA
-#define S_COLON &kp DOT
-#define S_QMARK &kp LS(M)
+  // third row
+  #define S_TILDE &digraph RA(N2) SPACE
+  #define S_LBKT  &kp RA(N5)
+  #define S_RBKT  &kp RA(MINUS)
+  #define S_UNDER &kp N8
+  #define S_HASH  &kp RA(N3)
+  #define S_PIPE  &kp RA(N6)
+  #define S_EXCL  &kp FSLH
+  #define S_SEMI  &kp COMMA
+  #define S_COLON &kp DOT
+  #define S_QMARK &kp LS(M)
 
-// extra
-#define S_COMMA &kp M
-#define S_DOT   &kp LS(COMMA)
-#define S_MONEY &kp RA(E)
+  // extra
+  #define S_COMMA &kp M
+  #define S_DOT   &kp LS(COMMA)
+  #define S_MONEY &kp RA(E)
+
+#else
+  // first row
+  #define S_CARET &kp RA(N9)
+  #define S_LT    &kp NUBS
+  #define S_GT    &kp PIPE2
+  #define S_DLLR  &kp RBKT
+  #define S_PRCNT &kp LS(SQT)
+  #define S_AT    &kp RA(N0)
+  #define S_AMPS  &kp N1
+  #define S_STAR  &kp BSLH
+  #define S_SQT   &kp N4
+  #define S_GRAVE &digraph RA(N7) SPACE
+
+  // second row
+  #define S_LBRC  &kp RA(N4)
+  #define S_LPAR  &kp N5
+  #define S_RPAR  &kp MINUS
+  #define S_RBRC  &kp RA(EQUAL)
+  #define S_EQUAL &kp EQUAL
+  #define S_BSLH  &kp RA(N8)
+  #define S_PLUS  &kp PLUS
+  #define S_MINUS &kp N6
+  #define S_FSLH  &kp LS(DOT)
+  #define S_DQT   &kp N3
+
+  // third row
+  #define S_TILDE &digraph RA(N2) SPACE
+  #define S_LBKT  &kp RA(N5)
+  #define S_RBKT  &kp RA(MINUS)
+  #define S_UNDER &kp N8
+  #define S_HASH  &kp RA(N3)
+  #define S_PIPE  &kp RA(N6)
+  #define S_EXCL  &kp FSLH
+  #define S_SEMI  &kp COMMA
+  #define S_COLON &kp DOT
+  #define S_QMARK &kp LS(M)
+
+  // extra
+  #define S_COMMA &kp M
+  #define S_DOT   &kp LS(COMMA)
+  #define S_MONEY &kp RA(E)
+#endif
+
 
 // GRAVE and TILDE are no dead keys on Linux
 #ifdef LINUX
@@ -165,7 +222,7 @@
   #define SC_NTLD &kp LS(N) // XXX
 #else
   #define  C_NTLD &digraph RA(N2) N     // ñ
-  #define SC_NTLD &digraph RA(N2) LS(N) // ñ
+  #define SC_NTLD &digraph RA(N2) LS(N) // Ñ
 #endif
 
 // quote signs

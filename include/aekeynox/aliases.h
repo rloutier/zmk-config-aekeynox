@@ -36,7 +36,18 @@
 
 // Numbers
 
-#ifdef SHIFTED_NUMBERS
+#ifdef VM_VDM
+  #define S_N0  &vdm_mod LSHIFT N0
+  #define S_N1  &vdm_mod LSHIFT N1
+  #define S_N2  &vdm_mod LSHIFT N2
+  #define S_N3  &vdm_mod LSHIFT N3
+  #define S_N4  &vdm_mod LSHIFT N4
+  #define S_N5  &vdm_mod LSHIFT N5
+  #define S_N6  &vdm_mod LSHIFT N6
+  #define S_N7  &vdm_mod LSHIFT N7
+  #define S_N8  &vdm_mod LSHIFT N8
+  #define S_N9  &vdm_mod LSHIFT N9
+#elif SHIFTED_NUMBERS
   #define S_N0  &kp LS(N0)
   #define S_N1  &kp LS(N1)
   #define S_N2  &kp LS(N2)
@@ -62,7 +73,13 @@
 
 // Non-Alpha Actions
 
-#define X_SHTAB &kp RS(TAB)
+#ifdef VM_VDM
+  #define X_SHTAB &vdm_mod RSHIFT TAB
+#else
+  #define X_SHTAB &kp RS(TAB)
+#endif
+
+
 #ifdef MACOS
   #define X_PREV &kp LG(LBKT)
   #define X_NEXT &kp LG(RBKT)
