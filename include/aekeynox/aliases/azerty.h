@@ -13,6 +13,7 @@
   #define X_CTL_W &vdm_mod LCTL Z
   #define X_SAVE  &vdm_mod LCTL S
   #define X_ALL   &vdm_mod LCTL Q
+  #define X_CLOSE &vdm_mod LALT F4
 #else
   #define X_UNDO  &kp CMD(W)
   #define X_CUT   &kp CMD(X)
@@ -23,6 +24,7 @@
   #define X_CTL_W &kp LC(Z)
   #define X_SAVE  &kp CMD(S)
   #define X_ALL   &kp CMD(Q)
+  #define X_CLOSE &kp LA(F4)
 #endif
 
 /**
@@ -36,7 +38,7 @@
   // first row
   #define S_CARET &vdm_mod RALT N9
   #define S_LT    &kp NUBS
-  #define S_GT    &kp PIPE2
+  #define S_GT    &vdm_mod LSHIFT NUBS
   #define S_DLLR  &kp RBKT
   #define S_PRCNT &vdm_mod LSHIFT SQT
   #define S_AT    &vdm_mod RALT N0

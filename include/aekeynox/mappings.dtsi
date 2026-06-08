@@ -77,10 +77,12 @@
     OMIT_IF_NO_REF vdm_mod: vdm_mod {
       compatible = "zmk,behavior-macro-two-param";
       #binding-cells = <2>;
-      wait-ms = <100>;
+      tap-ms = <20>;
+      wait-ms = <0>;
       bindings
         = <&macro_press    &macro_param_1to1 &kp MACRO_PLACEHOLDER>  // Modifier 
         , <&macro_tap      &macro_param_2to1 &kp MACRO_PLACEHOLDER>  // Regular key
+        , <&macro_wait_time 80>
         , <&macro_release  &macro_param_1to1 &kp MACRO_PLACEHOLDER>  // Modifier
         ;
     };
@@ -89,10 +91,12 @@
     OMIT_IF_NO_REF vdm_mod_dk: vdm_mod_dk {
       compatible = "zmk,behavior-macro-two-param";
       #binding-cells = <2>;
-      wait-ms = <100>;
+      tap-ms = <20>;
+      wait-ms = <0>;
       bindings
         = <&macro_press    &macro_param_1to1 &kp MACRO_PLACEHOLDER>  // Modifier 
         , <&macro_tap      &macro_param_2to1 &kp MACRO_PLACEHOLDER>  // Regular key
+        , <&macro_wait_time 80>
         , <&macro_release  &macro_param_1to1 &kp MACRO_PLACEHOLDER>  // Modifier
         , <&macro_tap      &kp SPACE>
         ;

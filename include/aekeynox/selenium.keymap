@@ -74,10 +74,10 @@
     vim_nav_layer: vim_nav_layer {
       display-name = "VimNav";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
-        &trans  ,  X_ALL        X_UNDO       X_SHTAB   &kp TAB      &none        ,   &kp PG_UP       &kp HOME        &kp END       &kp PG_DN        &kp DEL  ,  &trans ,
-        &trans  ,  &kp GUI_OPT  &kp ALT_CTL  &kp LSFT  &kp CTL_CMD  &kp LA(F4)   ,   &kp LEFT        &kp DOWN        &kp UP        &kp RIGHT        &none    ,  &trans ,
-        &trans  ,  X_CTL_W      X_CUT        X_COPY    X_PASTE      X_REDO       ,   &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none    ,  &trans ,
-                             &kp CAPS , &sc FN_MEDIA_LAYER DEL , &mo NUM_LAYER   ,   &trans , &mo FN_MEDIA_LAYER , &EZ_LSK(RALT)
+        &trans  ,  X_ALL        X_UNDO       X_SHTAB   &kp TAB      &none     ,   &kp PG_UP       &kp HOME        &kp END       &kp PG_DN        &kp DEL  ,  &trans ,
+        &trans  ,  &kp GUI_OPT  &kp ALT_CTL  &kp LSFT  &kp CTL_CMD  X_CLOSE   ,   &kp LEFT        &kp DOWN        &kp UP        &kp RIGHT        &none    ,  &trans ,
+        &trans  ,  X_CTL_W      X_CUT        X_COPY    X_PASTE      X_REDO    ,   &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none    ,  &trans ,
+                          &kp CAPS , &sc FN_MEDIA_LAYER DEL , &mo NUM_LAYER   ,   &trans , &mo FN_MEDIA_LAYER , &EZ_LSK(RALT)
       )>;
     };
 
