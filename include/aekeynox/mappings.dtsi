@@ -81,8 +81,8 @@
       wait-ms = <0>;
       bindings
         = <&macro_press    &macro_param_1to1 &kp MACRO_PLACEHOLDER>  // Modifier 
-        , <&macro_tap      &macro_param_2to1 &kp MACRO_PLACEHOLDER>  // Regular key
         , <&macro_wait_time 80>
+        , <&macro_tap      &macro_param_2to1 &kp MACRO_PLACEHOLDER>  // Regular key
         , <&macro_release  &macro_param_1to1 &kp MACRO_PLACEHOLDER>  // Modifier
         ;
     };
@@ -95,11 +95,24 @@
       wait-ms = <0>;
       bindings
         = <&macro_press    &macro_param_1to1 &kp MACRO_PLACEHOLDER>  // Modifier 
-        , <&macro_tap      &macro_param_2to1 &kp MACRO_PLACEHOLDER>  // Regular key
         , <&macro_wait_time 80>
+        , <&macro_tap      &macro_param_2to1 &kp MACRO_PLACEHOLDER>  // Regular key
         , <&macro_release  &macro_param_1to1 &kp MACRO_PLACEHOLDER>  // Modifier
         , <&macro_tap      &kp SPACE>
         ;
+    };
+
+	// ZMK test to undertand when wait-time actually happens
+    OMIT_IF_NO_REF vdm_wait_test: vdm_wait_test {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      tap-ms = <100>;
+      wait-ms = <500>;
+      bindings
+		= <&kp F &kp A &kp S &kp T>
+		, <&macro_wait_time 2000>
+		, <&kp S &kp L &kp O &kp W>
+		;
     };
 
   };
