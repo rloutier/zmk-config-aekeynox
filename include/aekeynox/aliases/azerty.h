@@ -36,16 +36,16 @@
 
 #ifdef VM_VDM
   // first row
-  #define S_CARET &vdm_mod RALT N9
+  #define S_CARET &vdm_altgr N9
   #define S_LT    &kp NUBS
   #define S_GT    &vdm_mod LSHIFT NUBS
   #define S_DLLR  &kp RBKT
   #define S_PRCNT &vdm_mod LSHIFT SQT
-  #define S_AT    &vdm_mod RALT N0
+  #define S_AT    &vdm_altgr N0
   #define S_AMPS  &kp N1
   #define S_STAR  &kp BSLH
   #define S_SQT   &kp N4
-  #define S_GRAVE &vdm_mod_dk RALT N7
+  #define S_GRAVE &vdm_altgr_dk N7
 
   // !!! TODO: les lignes suivantes !!!
   // second row
